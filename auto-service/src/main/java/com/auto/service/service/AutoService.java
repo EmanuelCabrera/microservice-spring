@@ -13,22 +13,22 @@ public class AutoService {
 
 	@Autowired
 	private AutoRepository autoRepository;
-	
+
 
 	public List<Auto> getAll(){
 		return autoRepository.findAll();
 	}
-	
+
 	public Auto getById(int id) {
 		return autoRepository.findById(id).orElse(null);
 	}
-	
+
 	public Auto save(Auto Auto) {
 		Auto newAuto = autoRepository.save(Auto);
-		
+
 		return newAuto;
 	}
-	
+
 	public List<Auto> getByUserId(int userId){
 		return autoRepository.findByUserId(userId);
 	}

@@ -17,10 +17,10 @@ import com.auto.service.service.AutoService;
 @RestController
 @RequestMapping("/auto")
 public class AutoController {
-	
+
 	@Autowired
 	private AutoService autoService;
-	
+
 	@GetMapping
 	public ResponseEntity<List<Auto>> getAutos(){
 		List<Auto> autos = autoService.getAll();
@@ -29,7 +29,7 @@ public class AutoController {
 		}
 		return ResponseEntity.ok(autos);
 	}
-	
+
 	@GetMapping("/{id}")
 	public ResponseEntity<Auto> getAutoById(@PathVariable("id") int id){
 		Auto auto = autoService.getById(id);
@@ -38,7 +38,7 @@ public class AutoController {
 		}
 		return ResponseEntity.ok(auto);
 	}
-	
+
 	@GetMapping("/user/{userId}")
 	public ResponseEntity<List<Auto>> getAutosByUser(@PathVariable("userId") int userId){
 		List<Auto> autosByUser = autoService.getByUserId(userId);
@@ -47,11 +47,11 @@ public class AutoController {
 		}
 		return ResponseEntity.ok(autosByUser);
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<Auto> autoSave(@RequestBody Auto auto){
 		Auto newAuto = autoService.save(auto);
 		return ResponseEntity.ok(newAuto);
-		
+
 	}
 }

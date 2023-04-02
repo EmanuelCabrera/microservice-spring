@@ -11,7 +11,7 @@ public class Auto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String marca;
 	private String modelo;
 	private int userId;
@@ -42,6 +42,6 @@ public class Auto {
 	public Auto() {
 		super();
 	}
-	
-	
+
+
 }
