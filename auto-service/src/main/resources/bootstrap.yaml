@@ -1,2 +1,7 @@
-server.port=8002
-spring.application.name=auto-service
+spring:
+  application:
+    name: auto-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
