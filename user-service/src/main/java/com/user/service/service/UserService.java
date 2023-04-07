@@ -32,12 +32,14 @@ public class UserService {
 
 
 	public List<Auto> getAutos(int userId){
+		@SuppressWarnings("unchecked")
 		List<Auto> autos = restTemplate.getForObject("http://localhost:8002/auto/user/" + userId, List.class);
 		return autos;
 	}
 
 
 	public List<Moto> getMotos(int userId){
+		@SuppressWarnings("unchecked")
 		List<Moto> motos = restTemplate.getForObject("http://localhost:8003/moto/user/" + userId, List.class);
 		return motos;
 	}
