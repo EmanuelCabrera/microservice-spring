@@ -52,6 +52,7 @@ public class MotoController {
 	
 	@PostMapping
 	public ResponseEntity<Moto> save(@RequestBody Moto moto){
-		return ResponseEntity.ok(moto);
+		Moto newMoto = motoService.save(moto);
+		return ResponseEntity.ok(newMoto);
 	}
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.user.service.models.Auto;
 
-@FeignClient(name = "auto-service", url = "http://localhost:8002", path = "/auto")
+@FeignClient(name = "auto-service", path = "/auto")
 public interface AutoFeignClient {
 
 	@PostMapping
