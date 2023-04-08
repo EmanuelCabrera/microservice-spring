@@ -33,14 +33,16 @@ public class UserService {
 
 	public List<Auto> getAutos(int userId){
 		@SuppressWarnings("unchecked")
-		List<Auto> autos = restTemplate.getForObject("http://localhost:8002/auto/user/" + userId, List.class);
+//		List<Auto> autos = restTemplate.getForObject("http://auto-service/auto/user/" + userId, List.class);
+		List<Auto> autos = autoFeignClient.getAutos(userId);
 		return autos;
 	}
 
 
 	public List<Moto> getMotos(int userId){
 		@SuppressWarnings("unchecked")
-		List<Moto> motos = restTemplate.getForObject("http://localhost:8003/moto/user/" + userId, List.class);
+//		List<Moto> motos = restTemplate.getForObject("http://moto-service/moto/user/" + userId, List.class);
+		List<Moto> motos = motoFeignClient.getMotos(userId);
 		return motos;
 	}
 
